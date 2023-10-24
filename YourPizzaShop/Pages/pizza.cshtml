@@ -1,0 +1,55 @@
+﻿@page
+@model YourPizzaShop.Pages.pizzaModel
+@{
+}
+<div class="text-center">
+    <div class="mainText">
+
+        <h1 class="display-4 text-capitalize text-black">Our Pizza Collection</h1>
+        <h4>Choose One or try our Pizza Builder! Then order and Done! your pizza is on its way</h4>
+        <h4> No need to give any information</h4>
+        <h4>We have the already, ok! also no need to fear! </h4>
+
+        <p class="smallText"><i>Only one pizza per order</i></p>
+
+    </div>
+    <div class="containers">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+
+                <div class="w-100 row makeYourOwnDiv">
+                    <div class="col-4">
+                        <img src="~/images/Pizzas/Create.png" class="w-100" />
+                    </div>
+
+                    <div class="col-8 align-item-center">
+                        <div class="align-middle makeYourText">
+                            <h3 style="text-align:left"> Create your Own Pizza</h3>
+                            <p style="text-align:left;">Make your own Pizza with our PizzaMaker!</p>
+                            <a class="btn btn-primary" style="float: left" asp-area="" asp-page="forms/custompizza">Try Now!</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>  
+
+           
+            @foreach(var pizza in Model.fakePizzaDB)
+            { 
+
+                var ImagePath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
+                <div class="col-4 mb-5 ">
+                     <a class="imgPizza" asp-area"" asp-page="Checkout/checkout" asp-route-ImageTitle="@pizza.ImageTitle" asp-route-PizzaPrice="@pizza.FinalPrice">
+                       <img src="@ImagePath" class="w-100" asp-append-version="true" />
+                     </a>
+                    <br />
+
+                </div>
+            }
+                
+
+        </div>
+    </div>
+
+</div>

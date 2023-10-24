@@ -1,0 +1,85 @@
+﻿@page
+@model YourPizzaShop.Pages.OrdersModel
+@{
+}
+<h3>Orders</h3>
+
+<hr />
+
+<table class="table">
+
+    @if (User.IsInRole("Admin"))
+    {
+        <thead>
+            <tr>
+
+                <th>
+                    PizzaName
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Owner
+                </th>
+                <th>
+                    Status 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.PizzaName</td>
+                   
+                    <td>$ @order.BasePrice</td>
+
+                    <td>@order.Owner.FirstName.ToUpper() @order.Owner.LastName.ToUpper()</td>
+
+                    @* <td>
+                        <a asp-page="ConfirmationPage" asp-route-Id="@order.Id" >@order.Status</a>
+            </td>*@
+
+                    <td>
+                        <a asp-page="WaitPage" asp-route-Id="@order.Id">@order.Status</a>
+                </td>
+
+                    <td>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@order.Id">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                
+            }
+        </tbody>
+      //  <a asp-page="Admin/Controlpage">View Users</a>
+        }
+    else
+    {
+        <thead>
+            <tr>
+
+                <th>
+                    PizzaName
+                </th>
+                <th>
+                    Price
+                </th>
+        </thead>
+        <tbody>
+             @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.PizzaName</td>
+                    <td>$ @order.BasePrice</td>
+                </tr>
+            }
+        </tbody>
+
+        
+    }
+
+</table>

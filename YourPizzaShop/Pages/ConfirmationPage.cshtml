@@ -1,0 +1,43 @@
+﻿@page
+@model YourPizzaShop.Pages.ConfirmationPageModel
+@{
+    ViewData["Title"] = "ConfirmationPage";
+
+}
+
+
+
+<table class="table">
+
+
+<thead>
+    <tr>
+        <th>
+            Pizzaname
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+</thead>
+<tbody>
+        @foreach(var ord in Model.PizzaOrders)
+        {
+            <tr>
+                <td>
+                    @ord.PizzaName
+                </td>
+                <td>
+                    @ord.BasePrice
+                </td>
+                <td>
+                    @ord.Status
+                </td>
+            </tr>        
+        }
+        
+</tbody>
+</table>

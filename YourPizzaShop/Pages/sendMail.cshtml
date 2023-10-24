@@ -1,0 +1,23 @@
+﻿@page
+@model YourPizzaShop.Pages.sendMailModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <label for="From">From:</label>
+        <input type="text" id="From" name="From" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="To">To:</label>
+        <input type="text" id="To" name="To" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Subject">Subject:</label>
+        <input type="text" id="Subject" name="Subject" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Body">Body:</label>
+        <textarea id="Body" name="Body" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Email</button>
+</form>

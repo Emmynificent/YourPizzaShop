@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHBt/NGa67kKdaZnj+n4npwAAAAACAAAAAAAQZgAAAAEAACAAAADJ8dNzxFolrzXfjjq30w5z09tliBAQVmafpNrNQqWxAgAAAAAOgAAAAAIAACAAAAD2WVciHfYWj60FPUjjkdGr4QA4/soYMh0dA/DTo+hM6CAAAAB7ZPoJc4oR1HMvKOf4y7MJEDGl7jZ9uvfRQVVU8NA1RUAAAAB1k7/d/TK+SJzb38XqzgHBv6ukQy01NPW/iPQuRDuGTA+OTZe4UNrDGlBBVknK3s4g+rvt4RKQoFtp9dVk80mT</EncryptedPassword>
+    <_PublishTargetUrl>https://win8007.site4now.net:8172/MsDeploy.axd?site=genzgreatness-001-site1</_PublishTargetUrl>
+    <History>False|2023-10-23T10:05:48.7102478Z;False|2023-10-23T11:05:37.8549769+01:00;False|2023-10-23T11:03:53.0102342+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

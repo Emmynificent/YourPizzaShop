@@ -1,0 +1,111 @@
+﻿@page
+@model YourPizzaShop.Pages.WaitPage
+@{
+    ViewData["Title"] = "WaitPage";
+
+}
+
+
+
+<table class="table">
+
+
+<thead>
+    <tr>
+        <th>
+            Pizzaname
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+</thead>
+<tbody>
+
+    @foreach (var item in Model.orders) 
+    {
+            <tr>
+                <td>@item.PizzaName</td>
+                <td>@item.BasePrice</td>
+                
+          
+                
+             @*   <form method="post" asp-page-handler="OnPostStatus" asp-route-Id="@item.Id">
+                    <input type="hidden", asp-for="Id", value="@item.Id"/>
+                <td>
+                    <select class="form-select form-select-sm" aria-label="Default select example" asp-for="newStatus" onchange="this.form.submit()">
+                        <option value="" selected>@item.Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Completed">Delivered</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </td>
+                </form>
+*@
+            
+            <form method="post">
+            <input type="hidden" name="Id" value="@item.Id" />
+             <td>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="newStatus" onchange="this.form.submit()">
+            <option value="" selected>@item.Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Completed">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+            </select>
+            </td>
+            </form>
+
+            </tr>
+        
+    }
+
+</tbody>
+
+</table>
+
+@*@{
+    ViewData["Title"] = "WaitPage";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Pizzaname
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Status
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.orders)
+        {
+            <tr>
+                <td>@item.PizzaName</td>
+                <td>@item.BasePrice</td>
+                <td>
+                    <form method="post" name="SelectOrder_@item.Id">
+                        <select class="form-select form-select-sm" aria-label="Default select example" onchange="this.form.submit()">
+                            <option value="" selected>@item.Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Completed">Delivered</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+

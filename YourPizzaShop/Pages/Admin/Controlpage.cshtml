@@ -1,0 +1,11 @@
+﻿@page
+@model YourPizzaShop.Pages.Admin.ControlpageModel
+@{
+}
+
+@foreach(var orders in Model.shopUsers)
+{
+    <tr>
+        <td>$"{@orders.FirstName} {@orders.LastName} {@orders.Email}"</td>
+    </tr>
+}
